@@ -6,6 +6,7 @@ public class AddressBook {
         this.buddyInfo= new ArrayList<BuddyInfo>();
     }
     public void addBuddy(BuddyInfo buddy1){
+        if(buddy1!=null)
         buddyInfo.add(buddy1);
     }
     public void removeBuddy(BuddyInfo buddy2){
