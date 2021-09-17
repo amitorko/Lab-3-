@@ -8,14 +8,23 @@ public class AddressBook {
     public void addBuddy(BuddyInfo buddy1){
         buddyInfo.add(buddy1);
     }
-    public void removeBuddy(int i){
-        if(i>=0 && i<buddyInfo.size() ){
-            buddyInfo.remove(i);
+    public void removeBuddy(BuddyInfo buddy2){
+        int index= -1;
+        for(int i=0; i<buddyInfo.size(); i++){
+            if(buddyInfo.get(i)==buddy2){
+                index = i;
+            }
         }
+        if(index != -1)
+            buddyInfo.remove(index);
+
     }
 
     public static void main(String[] args) {
-        System.out.println("Address Book");
+        BuddyInfo buddy = new BuddyInfo("Tom");
+        AddressBook aBook = new AddressBook();
+        aBook.addBuddy(buddy);
+        aBook.removeBuddy(buddy);
     }
 
 }
